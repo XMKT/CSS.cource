@@ -1,12 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Полный пример CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Исправлено: styles.css, не style.css -->
+    <style>
+      /* Внутренний CSS */
+      .internal-style {
+        color: darkblue;
+        font-style: italic;
+      }
+
+      /* Стили для демонстрации блочной модели */
+      .box-model-demo {
+        margin: 20px 0;
+        padding: 10px;
+        border: 1px dashed #333;
+      }
+    </style>
   </head>
   <body>
-    <h1>Заголовок</h1>
+    <!-- Встроенный CSS -->
+    <h1 style="background-color: #f0f0f0; padding: 10px; border-radius: 5px">
+      Демонстрация всех изученных концепций CSS
+    </h1>
+    <div class="container">
+      <!-- Универсальный селектор применен в external CSS -->
+
+      <!-- Селектор по типу тега -->
+      <h2>Селекторы CSS</h2>
+      <p>
+        Это обычный параграф, стилизованный с помощью селектора по типу тега.
+      </p>
+
+      <!-- Селектор по классу -->
+      <p class="highlight">Этот параграф имеет класс "highlight"</p>
+      <p>А этот параграф не имеет класса highlight</p>
+
+      <!-- Селектор по ID -->
+      <h3 id="main-heading">Это заголовок с ID "main-heading"</h3>
+
+      <!-- Селектор по атрибуту -->
+      <div data-category="main" class="attr-demo">
+        Этот div имеет атрибут data-category="main"
+      </div>
+
+      <!-- Групповой селектор -->
+      <div class="group-selector-demo">
+        <span>Элемент span</span>
+        <p>Элемент p</p>
+      </div>
+
+      <!-- Комбинаторы -->
+      <div class="combinators-demo">
+        <h3>Комбинаторы CSS</h3>
+        <div class="parent">
+          <p>Прямой потомок (div > p)</p>
+          <div>
+            <p>Вложенный потомок (div p)</p>
+          </div>
+        </div>
+
+        <div class="sibling-demo">
+          <p class="grid">Элемент с классом grid</p>
+          <p>Соседний элемент (.grid + p)</p>
+          <p>Общий родственный элемент (.grid ~ p)</p>
+        </div>
+      </div>
+
+      <!-- Блочная модель -->
+      <div class="box-model-demo">
+        <h3>Блочная модель (Box Model)</h3>
+
+        <div class="standard-box">
+          <p>Стандартная блочная модель (content-box)</p>
+          <p>width: 300px, padding: 20px, border: 5px</p>
+          <p>Общая ширина: 300 + 20+20 + 5+5 = 350px</p>
+        </div>
+
+        <div class="border-box">
+          <p>Альтернативная модель (border-box)</p>
+          <p>width: 300px, padding: 20px, border: 5px</p>
+          <p>Общая ширина: 300px (включает padding и border)</p>
+        </div>
+      </div>
+
+      <!-- Свойство display -->
+      <div class="display-demo">
+        <h3>Свойство display</h3>
+
+        <div class="block-element">Блочный элемент (display: block)</div>
+        <span class="inline-element">Строчный элемент (display: inline)</span>
+        <span class="inline-element">Другой строчный элемент</span>
+
+        <div class="inline-block-element">Строчно-блочный элемент 1</div>
+        <div class="inline-block-element">Строчно-блочный элемент 2</div>
+      </div>
+
+      <!-- Стилизация текста -->
+      <div class="text-styling-demo">
+        <h3>Стилизация текста</h3>
+
+        <p class="text-color">Текст с измененным цветом</p>
+        <p class="text-size">Текст с размером 1.5rem (относительные единицы)</p>
+        <p class="text-bold">Жирный текст (font-weight: 700)</p>
+        <p class="text-italic">Курсивный текст (font-style: italic)</p>
+        <p class="text-uppercase">текст в верхнем регистре</p>
+        <p class="text-lowercase">ТЕКСТ В НИЖНЕМ РЕГИСТРЕ</p>
+        <p class="text-capitalize">текст с заглавными буквами каждого слова</p>
+        <p class="text-underline">Подчеркнутый текст</p>
+        <p class="text-line-through">Перечеркнутый текст</p>
+
+        <div class="text-align-demo">
+          <p class="text-left">Текст, выровненный по левому краю</p>
+          <p class="text-center">Текст, выровненный по центру</p>
+          <p class="text-right">Текст, выровненный по правому краю</p>
+          <p class="text-justify">
+            Текст, выровненный по ширине. Этот текст демонстрирует выравнивание
+            по всей ширине контейнера. Обратите внимание, как добавляются
+            дополнительные пробелы между словами.
+          </p>
+        </div>
+
+        <p class="line-height-demo">
+          Текст с увеличенным межстрочным интервалом (line-height: 2).<br />
+          Вторая строка текста для демонстрации.<br />
+          Третья строка текста.
+        </p>
+      </div>
+
+      <!-- Внутренний CSS демонстрация -->
+      <p class="internal-style">
+        Этот параграф стилизован с помощью внутреннего CSS
+      </p>
+    </div>
+    <script>
+      // Добавим немного интерактивности для демонстрации
+      document.querySelectorAll(".highlight").forEach((el) => {
+        el.addEventListener("click", function () {
+          this.style.backgroundColor =
+            this.style.backgroundColor === "yellow" ? "#e0e0e0" : "yellow";
+        });
+      });
+    </script>
   </body>
 </html>
