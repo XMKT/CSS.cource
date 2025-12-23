@@ -1,4 +1,252 @@
-h1 {
-  background-color: red;
-  font-size: 3rem;
+/* Внешний CSS файл */
+
+/* Универсальный селектор */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+body {
+  padding: 20px;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Селектор по типу тега */
+p {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+h2,
+h3 {
+  margin: 20px 0 10px 0;
+  color: #2c3e50;
+}
+
+/* Селектор по классу */
+.highlight {
+  background-color: yellow;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Селектор по ID */
+#main-heading {
+  color: #e74c3c;
+  border-bottom: 2px solid #e74c3c;
+  padding-bottom: 5px;
+}
+
+/* Селектор по атрибуту */
+[data-category="main"] {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/* Групповой селектор */
+.group-selector-demo span,
+.group-selector-demo p {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 8px;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+}
+
+/* Комбинаторы */
+
+/* Комбинатор потомков */
+.combinators-demo .parent p {
+  background-color: #d5f4e6;
+  padding: 8px;
+  margin: 5px 0;
+}
+
+/* Комбинатор прямых потомков */
+.combinators-demo .parent > p {
+  background-color: #fefbd8;
+  border-left: 3px solid #f7dc6f;
+}
+
+/* Комбинатор соседнего родства */
+.sibling-demo .grid + p {
+  background-color: #d6eaf8;
+  border: 2px dashed #3498db;
+}
+
+/* Комбинатор общего родства */
+.sibling-demo .grid ~ p {
+  color: #7d3c98;
+}
+
+/* Блочная модель демонстрация */
+.standard-box {
+  width: 300px;
+  height: 150px;
+  padding: 20px;
+  border: 5px solid #e74c3c;
+  margin: 20px 0;
+  background-color: #fadbd8;
+  color: #333;
+}
+
+.border-box {
+  width: 300px;
+  height: 150px;
+  padding: 20px;
+  border: 5px solid #27ae60;
+  margin: 20px 0;
+  background-color: #d5f4e6;
+  color: #333;
+  /* Альтернативная блочная модель */
+  box-sizing: border-box;
+}
+
+/* Свойство display */
+.block-element {
+  display: block;
+  background-color: #aed6f1;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #3498db;
+}
+
+.inline-element {
+  display: inline;
+  background-color: #f9e79f;
+  padding: 5px;
+  margin: 0 5px;
+  border: 1px solid #f7dc6f;
+}
+
+.inline-block-element {
+  display: inline-block;
+  width: 150px;
+  height: 60px;
+  background-color: #d5dbdb;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #7f8c8d;
+  text-align: center;
+  line-height: 40px;
+}
+
+/* Стилизация текста */
+.text-color {
+  color: #9b59b6;
+  font-size: 1.2em;
+}
+
+.text-size {
+  font-size: 1.5rem; /* Использование rem */
+}
+
+.text-bold {
+  font-weight: 700; /* Эквивалентно bold */
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-underline {
+  text-decoration: underline;
+  text-decoration-color: #e74c3c;
+  text-decoration-thickness: 2px;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+  text-decoration-color: #95a5a6;
+  text-decoration-style: wavy;
+}
+
+/* Выравнивание текста */
+.text-left {
+  text-align: left;
+  background-color: #f2f3f4;
+  padding: 10px;
+}
+
+.text-center {
+  text-align: center;
+  background-color: #f2f3f4;
+  padding: 10px;
+}
+
+.text-right {
+  text-align: right;
+  background-color: #f2f3f4;
+  padding: 10px;
+}
+
+.text-justify {
+  text-align: justify;
+  background-color: #f2f3f4;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.line-height-demo {
+  line-height: 2; /* */
+  background-color: #eaf2f8;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* Граница с закругленными углами */
+.attr-demo {
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+/* Дополнительные стили для наглядности */
+.box-model-demo,
+.combinators-demo,
+.display-demo,
+.text-styling-demo {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  color: #16a085;
+  margin-bottom: 15px;
+}
+
+/* Комментарии в CSS */
+/* Это многострочный комментарий
+   который демонстрирует как можно
+   комментировать код в CSS */
+
+/* А это однострочный комментарий */
